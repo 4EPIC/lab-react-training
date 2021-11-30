@@ -1,23 +1,23 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import IdCard from './components/IdCard';
+import IdCardList from './components/IdCardList';
+import Greeting from './components/Greeting';
+import GreetingsList from './components/GreetingsList';
+import Random from './components/Random';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className="cards">
+      <header>
+        <IdCardList />
+        <GreetingsList title="Greetings to:">
+          <Greeting lang="de" name="Ludwig" />
+          <Greeting lang="fr" name="François" />
+        </GreetingsList>
+        <Random min={1} max={6} />
+        <Random min={1} max={100} />
       </header>
     </div>
   );
